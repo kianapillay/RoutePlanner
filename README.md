@@ -1,16 +1,50 @@
-# route_planner
+# Route Planner
 
-A new Flutter project.
+## Overview
+Route Planner is a simple application that allows users to store and manage routes by name, latitude, and longitude. 
+The app includes logic for:  
+Validation: Ensures route data is complete and correct (e.g. checking for missing or invalid coordinates). 
+Optimization: Sorts routes or calculates best paths for efficiency.
 
-## Getting Started
+Validation and optimization logic is handled within the `RouteProvider` and related service classes, keeping the core logic separate from the UI for maintainability and testability.
 
-This project is a starting point for a Flutter application.
+## Features 
+Add,edit, and delete routes
+Validate route input data
+Optimize routes for effciency 
+Clean seperation of business logic and UI
 
-A few resources to get you started if this is your first Flutter project:
+## Running the App
+To run the app locally:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Make sure you have [Flutter](https://flutter.dev/docs/get-started/install) installed.  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Clone the repository:  
+   ```bash
+   git clone https://github.com/kianapillay/RoutePlanner.git
+
+3. Navigate to the project folder:
+    ```bash
+    cd route_planner
+
+    ````
+
+4. Get dependencies 
+    ```bash
+    flutter pub get
+
+    ```
+
+5. Run the app:
+    ```bash
+    flutter run
+    
+    ```
+
+## Running Tests
+This project uses Flutter's built in testing framework. To run tests:
+""flutter test""
+All tests are located in the `test/` directory. Ensure your `RouteProvider` is properly initialized in tests to avoid `ProviderNotFoundException`.
+
+## Architecture and Logic 
+Validation and optimization logic live in the state layer (the provider), not in the UI. The UI only displays data and trigger actions, while the provider enforces rules, performs calculations, and updates the app’s state. By keeping logic like input validation and route optimization inside RouteProvider, it ensures that all data remains consistent, the code is easier to test, and business rules are centralised instead of being scattered across screens.
