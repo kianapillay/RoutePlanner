@@ -42,10 +42,11 @@ To run the app locally:
     ```
 
 ## Running Tests
-This project uses Flutter's built in testing framework. To run tests:
-    ```bash 
+This project uses Flutter's built in testing framework. 
+To run tests:
+    ```bash
     flutter test
-
+    
     ```
 All tests are located in the `test/` directory. Ensure your `RouteProvider` is initialized properly in tests to avoid `ProviderNotFoundException`.
 
